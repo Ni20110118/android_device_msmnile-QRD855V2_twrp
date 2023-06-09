@@ -1,0 +1,21 @@
+<!--
+    Input:
+        manifest.xml
+        c2_manifest.xml
+-->
+<manifest version="1.0" type="device" target-level="4">
+    <hal format="hidl">
+        <name>android.hardware.keymaster</name>
+        <transport>hwbinder</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IKeymasterDevice</name>
+            <instance>default</instance>
+            <instance>strongbox</instance>
+        </interface>
+        <fqname>@4.0::IKeymasterDevice/default</fqname>
+        <fqname>@4.0::IKeymasterDevice/strongbox</fqname>
+    </hal>
+    </manifest>
+
+
