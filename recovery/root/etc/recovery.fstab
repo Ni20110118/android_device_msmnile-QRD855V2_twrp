@@ -20,6 +20,6 @@ odm                                                     /odm                   e
 # and fails if it does not find it.
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                             defaults
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice
-/dev/block/sdg1                                          /USB Storage            vfat       flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable        
+/dev/block/sdg1                                          /USB_Storage            vfat       flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable        
 /dev/block/sdg                                          /usbstorage            vfat       flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable                                                
-/super                                                    /super      emmc    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount                
+/super                                                    /super      ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount                
