@@ -9,6 +9,8 @@
 system                                                  /system                ext4    ro,barrier=1,discard                                 wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 product                                                 /product               ext4    ro,barrier=1,discard                                 wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
 vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
+/dev/block/by-name/boot_a                                                     /boot_a                   ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
+/dev/block/by-name/boot_b                                                     /boot_b                   ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
 odm                                                     /odm                   ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
 /dev/block/by-name/metadata                             /metadata              ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice,wrappedkey,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=128M,checkpoint=block
@@ -22,3 +24,5 @@ odm                                                     /odm                   e
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice
 /dev/block/sdg1                                          /usb_otg            auto       flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable        
 /dev/block/sdg                                          /usb_otg            auto       flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable                                                               
+/devices/platform/soc/1da4000.ufshc_card/host*          SDcard       vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
+/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*    /storage/usbotg    vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto
