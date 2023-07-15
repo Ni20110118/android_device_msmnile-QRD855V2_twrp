@@ -21,6 +21,6 @@ odm                                                     /odm                   e
 # and fails if it does not find it.
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                             defaults
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice
-/dev/block/sdg1                                          /usb_otg            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable        
-/dev/block/sdg                                          /usb_otg            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable                                                               
-/devices/platform/soc/1da4000.ufshc_card/host*          /SD_card       vfat    nosuid,nodev                                         wait,voldmanaged=SD_card:auto,encryptable=footer
+/dev/block/sdg1                                          /USB_OTG            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable        
+/dev/block/sdg                                          /USB_OTG            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable                                                               
+/devices/platform/soc/1da4000.ufshc_card/host*          /SD_CARD       vfat    nosuid,nodev                                         wait,voldmanaged=SD_card:auto,encryptable=footer
