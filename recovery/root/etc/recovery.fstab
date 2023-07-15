@@ -9,8 +9,7 @@
 system                                                  /system                ext4    ro,barrier=1,discard                                 wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 product                                                 /product               ext4    ro,barrier=1,discard                                 wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
 vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
-/dev/block/by-name/boot_a                               /Boot_a                   ext4    ro,barrier=1,discard                                 wait,slotselect,first_stage_mount
-/dev/block/by-name/boot_b                               /Boot_b                   ext4    ro,barrier=1,discard                                 wait,slotselect,first_stage_mount
+boot                                                     /Boot                   ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
 odm                                                     /odm                   ext4    ro,barrier=1,discard                                 wait,slotselect,avb,logical,first_stage_mount
 /dev/block/by-name/metadata                             /metadata              ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice,wrappedkey,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=128M,checkpoint=block
@@ -22,7 +21,6 @@ odm                                                     /odm                   e
 # and fails if it does not find it.
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                             defaults
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice
-/dev/block/sdg1                                          /usb_otg            auto       flags=fsflags=utf8;display="USB_Storage";storage;wipeingui;removable        
-/dev/block/sdg                                          /usb_otg            auto       flags=fsflags=utf8;display="USB_Storage";storage;wipeingui;removable                                                               
-/devices/platform/soc/1da4000.ufshc_card/host*          /SD_card       vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
-/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*    /USB_OTG vfat    nosuid,nodev    wait,voldmanaged=USB_OTG:auto
+/dev/block/sdg1                                          /usb_otg            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable        
+/dev/block/sdg                                          /usb_otg            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable                                                               
+/devices/platform/soc/1da4000.ufshc_card/host*          /SD_card       vfat    nosuid,nodev                                         wait,voldmanaged=SD_card:auto,encryptable=footer
