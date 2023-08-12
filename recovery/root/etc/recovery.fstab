@@ -22,4 +22,4 @@ boot                                                     /boot                  
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,fileencryption=ice
 /dev/block/sdg1                                          /USB_OTG            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable        
 /dev/block/sdg                                          /USB_OTG            vfat       flags=fsflags=utf8;display="usb_otg";storage;wipeingui;removable                                                               
-/devices/platform/soc/1da4000.ufshc_card/host*          /SD_CARD       vfat    nosuid,nodev                                         wait,voldmanaged=SD_card:auto,encryptable=footer
+/devices/platform/soc/1da4000.ufshc_card/host*          /SD_CARD       vfat    flags=fsflags=utf8;display="SD_CARD";storage;wipeingui;removable                                         wait,voldmanaged=SD_CARD:auto,encryptable=footer
